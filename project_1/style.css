@@ -1,0 +1,41 @@
+.playCircle{
+  border-radius: 50%;
+  border: 1px solid black;
+  width:90px;
+  height: 90px;
+  display: inline-block;
+  background-color: #00C2D6;
+}
+
+.clearFix{
+  clear: both;
+}
+
+body{
+  background: #DC0E15; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#EE8441 10%, #EB7038, #DC0E15); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#EE8441, #EB7038, #DC0E15); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#EE8441, #EB7038, #DC0E15); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#EE8441 5%, #EB7038, #DC0E15); /* Standard syntax */
+}
+
+h1{
+  text-align: center;
+  font-family: rickAndMortyFont;
+  font-size: 65px;
+  color: #00C2D6;
+}
+
+section{
+  text-align: center;
+  background-color: #FEFF71;
+  margin: 0 250px;
+  border-radius: 5%;
+  opacity: 0.9;
+  padding: 20px;
+}
+
+@font-face{
+  font-family: rickAndMortyFont;
+  src: url(rick_and_morty_by_shittychan-d9h2vl6.ttf);
+}
