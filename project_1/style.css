@@ -12,6 +12,12 @@
   clear: both;
 }
 
+#button{
+  height: 50px;
+  width: 50px;
+  background-color: grey;
+}
+
 body{
   background: #DC0E15; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#EE8441 10%, #EB7038, #DC0E15); /* Safari 5.1 to 6.0 */
