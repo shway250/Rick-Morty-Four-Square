@@ -16,22 +16,29 @@ var row4 = $('div.row4');
 var row5 = $('div.row5');
 var row6 = $('div.row6');
 var gameBoardArray = [row1, row2, row3, row4, row5, row6];
- 
+
+$('#instructions').click(function(){
+  $('.meeseeks').show("slow");
+});
+$('#instructions').click(function(){
+  $('.meeseeks').hide("fast");
+});
+
+ /////////======================Reset Function
 reset.click(function(event){
   for(var i = 0; i < 6; i++){
     for(var j = 0; j< 7; j++){
       gameBoardArray[i][0].children[j].style.backgroundImage = 'none';
       gameBoardArray[i][0].children[j].style.backgroundColor = 'rgb(0, 194, 214)';
+      gameBoardArray[i][0].children[j].style.border = '1px solid black';
     }
   }
   playerOne = 1;
   console.log('reset button clicked');
 });
 
+////////////////////////======================all play logic
 playCircles.click(function(event){
-
-  ///////var parentGameBoard = $(event.target).parents();
-  ///finding clicked div
   var clickedDiv = $(this);
   var indexClickedDiv = clickedDiv.index();
   ////Available play div variables
@@ -41,17 +48,10 @@ playCircles.click(function(event){
   var fourthRowToken = $(gameBoardArray[3][0].children[indexClickedDiv]);
   var fifthRowToken = $(gameBoardArray[4][0].children[indexClickedDiv]);
   var sixthRowToken = $(gameBoardArray[5][0].children[indexClickedDiv]);
-
   var tokenArray = [firstRowToken, secondRowToken, thirdRowToken, fourthRowToken, fifthRowToken, sixthRowToken];
 
   if(playerOne){
-    //getting this far
     if(sixthRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      //$(sixthRowToken.css('background-color', 'red'));
-      //$(sixthRowToken.append('<img class="token morty" src="images/Morty-token.jpg">'));
-      // $(sixthRowToken.css('background', 'url(images/Morty-token.jpg) no-repeat'));
-      // $(sixthRowToken.css('background-size', 'contain'));
-
       var counter = 0;
       var myInterval = setInterval(function() {
         if(counter === tokenArray.length - 1) {
@@ -60,81 +60,212 @@ playCircles.click(function(event){
         if(counter !== 0) {
           tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
         }
-
         tokenArray[counter].css('background', 'url(images/Morty-token.jpg) no-repeat');
         tokenArray[counter].css('background-size', 'contain');
-
         counter++;
       }, 50);
+      $(sixthRowToken.css('border', '1px solid rgb(0, 0, 1)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne - 1;
     }
     else if(fifthRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(fifthRowToken.css('background-color', 'red'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 2) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Morty-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(fifthRowToken.css('border', '1px solid rgb(0, 0, 1)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne - 1;
     }
     else if(fourthRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(fourthRowToken.css('background-color', 'red'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 3) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Morty-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(fourthRowToken.css('border', '1px solid rgb(0, 0, 1)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne - 1;
     }
     else if(thirdRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(thirdRowToken.css('background-color', 'red'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 4) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Morty-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(thirdRowToken.css('border', '1px solid rgb(0, 0, 1)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne - 1;
     }
     else if(secondRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(secondRowToken.css('background-color', 'red'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 5) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Morty-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(secondRowToken.css('border', '1px solid rgb(0, 0, 1)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne - 1;
     }
     else if(firstRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(firstRowToken.css('background-color', 'red'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 6) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Morty-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(firstRowToken.css('border', '1px solid rgb(0, 0, 1)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne - 1;
     }
   }
-  /////////////======player two logic===========/////////////////
+  /////////////======player two logic===========//////////////////////////////////////////
   else if (!playerOne){
     if(sixthRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(sixthRowToken.css('background-color', 'yellow'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 1) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Rick-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(sixthRowToken.css('border', '1px solid rgb(0, 1, 0)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne + 1;
     }
     else if(fifthRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(fifthRowToken.css('background-color', 'yellow'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 2) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Rick-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(fifthRowToken.css('border', '1px solid rgb(0, 1, 0)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne + 1;
     }
     else if(fourthRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(fourthRowToken.css('background-color', 'yellow'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 3) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Rick-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(fourthRowToken.css('border', '1px solid rgb(0, 1, 0)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne + 1;
     }
     else if(thirdRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(thirdRowToken.css('background-color', 'yellow'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 4) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Rick-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(thirdRowToken.css('border', '1px solid rgb(0, 1, 0)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne + 1;
     }
     else if(secondRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(secondRowToken.css('background-color', 'yellow'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 5) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Rick-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(secondRowToken.css('border', '1px solid rgb(0, 1, 0)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne + 1;
     }
     else if(firstRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(firstRowToken.css('background-color', 'yellow'));
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 6) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+        tokenArray[counter].css('background', 'url(images/Rick-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+        counter++;
+      }, 50);
+      $(firstRowToken.css('border', '1px solid rgb(0, 1, 0)'));
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne + 1;
@@ -146,10 +277,10 @@ function checkWinner(checker){
   ///////////////Checks rows for winner
   for(var i = 0; i < 6; i++){
     for(var j = 0; j < 4; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "red" &&
-        gameBoardArray[i][0].children[j+1].style.backgroundColor == "red" &&
-        gameBoardArray[i][0].children[j+2].style.backgroundColor == "red" &&
-        gameBoardArray[i][0].children[j+3].style.backgroundColor == "red"){
+      if(gameBoardArray[i][0].children[j].style.border == '1px solid rgb(0, 0, 1)' &&
+        gameBoardArray[i][0].children[j+1].style.border == '1px solid rgb(0, 0, 1)' &&
+        gameBoardArray[i][0].children[j+2].style.border == '1px solid rgb(0, 0, 1)' &&
+        gameBoardArray[i][0].children[j+3].style.border == '1px solid rgb(0, 0, 1)'){
         console.log('red wins');
       return true;
       }
@@ -157,10 +288,10 @@ function checkWinner(checker){
   }
   for(var i = 0; i < 6; i++){
     for(var j = 0; j < 4; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "yellow" &&
-        gameBoardArray[i][0].children[j+1].style.backgroundColor == "yellow" &&
-        gameBoardArray[i][0].children[j+2].style.backgroundColor == "yellow" &&
-        gameBoardArray[i][0].children[j+3].style.backgroundColor == "yellow"){
+      if(gameBoardArray[i][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i][0].children[j+1].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i][0].children[j+2].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i][0].children[j+3].style.border == "1px solid rgb(0, 1, 0)"){
         console.log('yellow wins');
       return true;
       }
@@ -169,63 +300,69 @@ function checkWinner(checker){
   //////////////Check Columns for winner
   for(var i = 0; i < 3; i++){
     for(var j = 0; j< 7; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "red" &&
-        gameBoardArray[i+1][0].children[j].style.backgroundColor == "red" &&
-        gameBoardArray[i+2][0].children[j].style.backgroundColor == "red" &&
-        gameBoardArray[i+3][0].children[j].style.backgroundColor == "red"){
+      if(gameBoardArray[i][0].children[j].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i+1][0].children[j].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i+2][0].children[j].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i+3][0].children[j].style.border == "1px solid rgb(0, 0, 1)"){
         console.log('red wins')
+      return true;
       }
     }
   }
   for(var i = 0; i < 3; i++){
     for(var j = 0; j< 7; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "yellow" &&
-        gameBoardArray[i+1][0].children[j].style.backgroundColor == "yellow" &&
-        gameBoardArray[i+2][0].children[j].style.backgroundColor == "yellow" &&
-        gameBoardArray[i+3][0].children[j].style.backgroundColor == "yellow"){
+      if(gameBoardArray[i][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i+1][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i+2][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i+3][0].children[j].style.border == "1px solid rgb(0, 1, 0)"){
         console.log('yellow wins')
+      return true;
       }
     }
   }
   ////////////////Checking down right for winner
 for(var i = 0; i < 3; i++){
     for(var j = 0; j< 4; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "red" &&
-        gameBoardArray[i+1][0].children[j+1].style.backgroundColor == "red" &&
-        gameBoardArray[i+2][0].children[j+2].style.backgroundColor == "red" &&
-        gameBoardArray[i+3][0].children[j+3].style.backgroundColor == "red"){
+      if(gameBoardArray[i][0].children[j].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i+1][0].children[j+1].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i+2][0].children[j+2].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i+3][0].children[j+3].style.border == "1px solid rgb(0, 0, 1)"){
         console.log('red wins')
+      return true;
       }
     }
   }
   for(var i = 0; i < 3; i++){
     for(var j = 0; j< 4; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "yellow" &&
-        gameBoardArray[i+1][0].children[j+1].style.backgroundColor == "yellow" &&
-        gameBoardArray[i+2][0].children[j+2].style.backgroundColor == "yellow" &&
-        gameBoardArray[i+3][0].children[j+3].style.backgroundColor == "yellow"){
+      if(gameBoardArray[i][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i+1][0].children[j+1].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i+2][0].children[j+2].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i+3][0].children[j+3].style.border == "1px solid rgb(0, 1, 0)"){
         console.log('yellow wins')
+      return true;
       }
     }
   }
   ///////////////////////checking down left for winner
   for(var i = 3; i < 6; i++){
     for(var j = 0; j< 4; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "red" &&
-        gameBoardArray[i-1][0].children[j+1].style.backgroundColor == "red" &&
-        gameBoardArray[i-2][0].children[j+2].style.backgroundColor == "red" &&
-        gameBoardArray[i-3][0].children[j+3].style.backgroundColor == "red"){
+      if(gameBoardArray[i][0].children[j].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i-1][0].children[j+1].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i-2][0].children[j+2].style.border == "1px solid rgb(0, 0, 1)" &&
+        gameBoardArray[i-3][0].children[j+3].style.border == "1px solid rgb(0, 0, 1)"){
         console.log('red wins')
+      return true;
       }
     }
   }
   for(var i = 3; i < 6; i++){
     for(var j = 0; j< 4; j++){
-      if(gameBoardArray[i][0].children[j].style.backgroundColor == "yellow" &&
-        gameBoardArray[i-1][0].children[j+1].style.backgroundColor == "yellow" &&
-        gameBoardArray[i-2][0].children[j+2].style.backgroundColor == "yellow" &&
-        gameBoardArray[i-3][0].children[j+3].style.backgroundColor == "yellow"){
+      if(gameBoardArray[i][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i-1][0].children[j+1].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i-2][0].children[j+2].style.border == "1px solid rgb(0, 1, 0)" &&
+        gameBoardArray[i-3][0].children[j+3].style.border == "1px solid rgb(0, 1, 0)"){
         console.log('yellow wins')
+      return true;
       }
     }
   }

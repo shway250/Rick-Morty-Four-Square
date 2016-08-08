@@ -20,9 +20,25 @@
 }
 
 #button{
-  height: 50px;
-  width: 50px;
-  background-color: grey;
+  display: inline-block;
+}
+
+#poopyButtHole{
+  width:150px;
+  height: 438px;
+}
+
+#resetInst{
+  display: inline-block;
+  margin-left: -331px;
+}
+
+#instructions{
+  margin: 20px;
+  pad
+}
+#instructions h2{
+  margin: 0;
 }
 
 body{
@@ -31,6 +47,7 @@ body{
   background: -o-radial-gradient(#EE8441, #EB7038, #DC0E15); /* For Opera 11.6 to 12.0 */
   background: -moz-radial-gradient(#EE8441, #EB7038, #DC0E15); /* For Firefox 3.6 to 15 */
   background: radial-gradient(#EE8441 5%, #EB7038, #DC0E15); /* Standard syntax */
+  text-align: center;
 }
 
 h1{
@@ -38,6 +55,13 @@ h1{
   font-family: rickAndMortyFont;
   font-size: 65px;
   color: #00C2D6;
+}
+h2{
+  font-family: rickAndMortyFont;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #00C2D6;
+  font-size: 45px;
+  margin: 20px 0 20px;
 }
 
 section{
