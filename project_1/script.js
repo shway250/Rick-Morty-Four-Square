@@ -4,6 +4,10 @@ var playerOne = 1;
 var playCircles = $('.playCircle');
 var reset = $('#button');
 
+///token variables
+var morty = $('.morty');
+var rick = $('.rick')
+
 ///////////////////////////Row Variables///////////////
 var row1 = $('div.row1');
 var row2 = $('div.row2');
@@ -16,9 +20,11 @@ var gameBoardArray = [row1, row2, row3, row4, row5, row6];
 reset.click(function(event){
   for(var i = 0; i < 6; i++){
     for(var j = 0; j< 7; j++){
+      gameBoardArray[i][0].children[j].style.backgroundImage = 'none';
       gameBoardArray[i][0].children[j].style.backgroundColor = 'rgb(0, 194, 214)';
     }
   }
+  playerOne = 1;
   console.log('reset button clicked');
 });
 
@@ -36,10 +42,30 @@ playCircles.click(function(event){
   var fifthRowToken = $(gameBoardArray[4][0].children[indexClickedDiv]);
   var sixthRowToken = $(gameBoardArray[5][0].children[indexClickedDiv]);
 
+  var tokenArray = [firstRowToken, secondRowToken, thirdRowToken, fourthRowToken, fifthRowToken, sixthRowToken];
+
   if(playerOne){
     //getting this far
     if(sixthRowToken.css('background-color') == 'rgb(0, 194, 214)'){
-      $(sixthRowToken.css('background-color', 'red'));
+      //$(sixthRowToken.css('background-color', 'red'));
+      //$(sixthRowToken.append('<img class="token morty" src="images/Morty-token.jpg">'));
+      // $(sixthRowToken.css('background', 'url(images/Morty-token.jpg) no-repeat'));
+      // $(sixthRowToken.css('background-size', 'contain'));
+
+      var counter = 0;
+      var myInterval = setInterval(function() {
+        if(counter === tokenArray.length - 1) {
+          clearInterval(myInterval);
+        }
+        if(counter !== 0) {
+          tokenArray[counter-1].css('background', 'rgb(0, 194, 214)');
+        }
+
+        tokenArray[counter].css('background', 'url(images/Morty-token.jpg) no-repeat');
+        tokenArray[counter].css('background-size', 'contain');
+
+        counter++;
+      }, 50);
       checkWinner(gameBoardArray);
       announceWinner();
       playerOne= playerOne - 1;

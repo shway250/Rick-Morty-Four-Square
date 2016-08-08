@@ -12,6 +12,13 @@
   clear: both;
 }
 
+.token{
+  border-radius: 50%;
+  width:95px;
+  height: 95px;
+  margin: -5px;
+}
+
 #button{
   height: 50px;
   width: 50px;
