@@ -19,9 +19,11 @@ var gameBoardArray = [row1, row2, row3, row4, row5, row6];
 
 $('#instructions').click(function(){
   $('.meeseeks').show("slow");
+  $('#instructions').hide("fast");
 });
-$('#instructions').click(function(){
-  $('.meeseeks').hide("fast");
+$('#mrMeeseeks').click(function(){
+  $('.meeseeks').hide("slow");
+  $('#instructions').show("fast");
 });
 
  /////////======================Reset Function
@@ -370,9 +372,29 @@ for(var i = 0; i < 3; i++){
 
 function announceWinner(){
   if(playerOne == true && checkWinner() == true){
+    setTimeout(function(){
+    $('.container').remove();
+    $('.meeseeks').remove();
+    $('#instructions').remove();
+    $('#winningMessage').html('OOOO WEEE! CONGRATS MOOOOOOOOORTY! CLICK ME TO RESET THE GAME!')
+    /////reset game
+    $('#button').click(function(){
+    location.reload();
+    });
     console.log('player one wins');
-  }else if(playerOne == false && checkWinner() == true){
-    console.log('player two wins')
+  }, 750);
+  }
+  else if(playerOne == false && checkWinner() == true){
+    setTimeout(function(){
+    $('.container').remove();
+    $('.meeseeks').remove();
+    $('#instructions').remove();
+    $('#winningMessage').html('OOOO WEEE! GOOD JOB RIIIIIIIIICK! CLICK ME TO RESET THE GAME!')
+    $('#button').click(function(){
+    location.reload();
+    });
+    console.log('player two wins');
+  }, 750);
   }
 }
 

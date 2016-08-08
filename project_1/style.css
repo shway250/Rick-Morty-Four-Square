@@ -35,10 +35,19 @@
 
 #instructions{
   margin: 20px;
-  pad
+  width:150px;
+  height: 150px;
 }
 #instructions h2{
   margin: 0;
+}
+
+.meeseeks{
+  display: inline-block;
+}
+
+.hidden{
+  display: none;
 }
 
 body{
@@ -55,6 +64,7 @@ h1{
   font-family: rickAndMortyFont;
   font-size: 65px;
   color: #00C2D6;
+  margin-bottom: 5px;
 }
 h2{
   font-family: rickAndMortyFont;
