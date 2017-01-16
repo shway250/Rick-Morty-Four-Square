@@ -17,14 +17,30 @@ var row5 = $('div.row5');
 var row6 = $('div.row6');
 var gameBoardArray = [row1, row2, row3, row4, row5, row6];
 
-$('#instructions').click(function(){
+
+
+// $('#instructions').click(function(){
+//   $('.meeseeks').show("slow");
+//   $('#instructions').hide("fast");
+// });
+// $('#mrMeeseeks').click(function(){
+//   $('.meeseeks').hide("slow");
+//   $('#instructions').show("fast");
+// });
+
+$('#instructions').click(showMeeseeksInstructions());
+$('#mrMeeseeks').click(hideMeeseeksInstructions());
+
+
+
+function showMeeseeksInstructions(){
   $('.meeseeks').show("slow");
   $('#instructions').hide("fast");
-});
-$('#mrMeeseeks').click(function(){
+}
+function hideMeeseeksInstructions(){
   $('.meeseeks').hide("slow");
   $('#instructions').show("fast");
-});
+}
 
  /////////======================Reset Function
 reset.click(function(event){
