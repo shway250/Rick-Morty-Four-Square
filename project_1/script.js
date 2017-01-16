@@ -36,7 +36,6 @@ reset.click(function(event){
     }
   }
   playerOne = 1;
-  console.log('reset button clicked');
 });
 
 ////////////////////////======================all play logic
@@ -283,7 +282,6 @@ function checkWinner(checker){
         gameBoardArray[i][0].children[j+1].style.border == '1px solid rgb(0, 0, 1)' &&
         gameBoardArray[i][0].children[j+2].style.border == '1px solid rgb(0, 0, 1)' &&
         gameBoardArray[i][0].children[j+3].style.border == '1px solid rgb(0, 0, 1)'){
-        console.log('red wins');
       return true;
       }
     }
@@ -294,7 +292,6 @@ function checkWinner(checker){
         gameBoardArray[i][0].children[j+1].style.border == "1px solid rgb(0, 1, 0)" &&
         gameBoardArray[i][0].children[j+2].style.border == "1px solid rgb(0, 1, 0)" &&
         gameBoardArray[i][0].children[j+3].style.border == "1px solid rgb(0, 1, 0)"){
-        console.log('yellow wins');
       return true;
       }
     }
@@ -306,7 +303,6 @@ function checkWinner(checker){
         gameBoardArray[i+1][0].children[j].style.border == "1px solid rgb(0, 0, 1)" &&
         gameBoardArray[i+2][0].children[j].style.border == "1px solid rgb(0, 0, 1)" &&
         gameBoardArray[i+3][0].children[j].style.border == "1px solid rgb(0, 0, 1)"){
-        console.log('red wins')
       return true;
       }
     }
@@ -317,7 +313,6 @@ function checkWinner(checker){
         gameBoardArray[i+1][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
         gameBoardArray[i+2][0].children[j].style.border == "1px solid rgb(0, 1, 0)" &&
         gameBoardArray[i+3][0].children[j].style.border == "1px solid rgb(0, 1, 0)"){
-        console.log('yellow wins')
       return true;
       }
     }
@@ -329,7 +324,6 @@ for(var i = 0; i < 3; i++){
         gameBoardArray[i+1][0].children[j+1].style.border == "1px solid rgb(0, 0, 1)" &&
         gameBoardArray[i+2][0].children[j+2].style.border == "1px solid rgb(0, 0, 1)" &&
         gameBoardArray[i+3][0].children[j+3].style.border == "1px solid rgb(0, 0, 1)"){
-        console.log('red wins')
       return true;
       }
     }
@@ -340,7 +334,6 @@ for(var i = 0; i < 3; i++){
         gameBoardArray[i+1][0].children[j+1].style.border == "1px solid rgb(0, 1, 0)" &&
         gameBoardArray[i+2][0].children[j+2].style.border == "1px solid rgb(0, 1, 0)" &&
         gameBoardArray[i+3][0].children[j+3].style.border == "1px solid rgb(0, 1, 0)"){
-        console.log('yellow wins')
       return true;
       }
     }
@@ -397,17 +390,4 @@ function announceWinner(){
   }, 750);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
